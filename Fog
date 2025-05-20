@@ -1,0 +1,42 @@
+local Players = game:GetService("Players")
+local Lighting = game:GetService("Lighting")
+
+local player = Players.LocalPlayer
+
+Lighting.FogStart = 0
+Lighting.FogEnd = 100
+Lighting.FogColor = Color3.fromRGB(180, 180, 180)
+Lighting.Ambient = Color3.fromRGB(120, 120, 120)
+Lighting.OutdoorAmbient = Color3.fromRGB(80, 80, 80)
+
+player.CharacterAdded:Connect(function(character)
+	local root = character:WaitForChild("HumanoidRootPart")
+
+	if root:FindFirstChild("FogAttachment") then return end
+
+	local attachment = Instance.new("Attachment")
+	attachment.Name = "FogAttachment"
+	attachment.Parent = root
+
+	local fog = Instance.new("ParticleEmitter")
+	fog.Name = "FogEmitter"
+	fog.Texture = "rbxassetid://771221224"
+
+	fog.Parent = attachment
+
+	fog.Rate = 100
+	fog.Lifetime = NumberRange.new(2, 4)
+	fog.Speed = NumberRange.new(0.3, 0.6)
+	fog.SpreadAngle = Vector2.new(360, 360)
+	fog.Size = NumberSequence.new{
+		NumberSequenceKeypoint.new(0, 4),
+		NumberSequenceKeypoint.new(1, 8)
+	}
+	fog.Transparency = NumberSequence.new{
+		NumberSequenceKeypoint.new(0, 0.4),
+		NumberSequenceKeypoint.new(1, 1)
+	}
+	fog.Color = ColorSequence.new(Color3.fromRGB(180, 180, 180))
+	fog.LightEmission = 0.5
+	fog.ZOffset = 1
+end)
