@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity3.txt?token=GHSAT0AAAAAADEHFJJ27DRILQERU4BRO7BI2BOHANQ
 loadstring(game:HttpGet("https://raw.githubusercontent.com/DoorsHubs/Doors-Hubs/refs/heads/main/Hardcore%20Sprint%20System%20(PC%20and%20Mobile%20Adaptation).lua.txt"))()
 local screenGui = Instance.new("ScreenGui")
 local textLabel1 = Instance.new("TextLabel")
@@ -49,4 +50,3 @@ for i = 0, 1, 0.05 do
     textLabel2.TextTransparency = i
     wait(0.05)
 end
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity3.txt?token=GHSAT0AAAAAADEHFJJ27DRILQERU4BRO7BI2BOHANQ"))()
