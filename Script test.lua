@@ -49,6 +49,3 @@ for i = 0, 1, 0.05 do
     textLabel2.TextTransparency = i
     wait(0.05)
 end
-
-screenGui:Destroy()
-wait(180)
