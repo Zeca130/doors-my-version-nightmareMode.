@@ -1,3 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/README.md?token=GHSAT0AAAAAADEHFJJ2JKXYKT2T4OP2EIZK2BOD3DQ"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Text.txt?token=GHSAT0AAAAAADEHFJJ3HLOT4QTTUO5NUEAC2BODUZA"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Fog?token=GHSAT0AAAAAADEHFJJ3XGBD535QLGT2RZ622BODXMQ"))()
+s={"скрипт1.lua","скрипт2.lua","скрипт3.lua","скрипт4.lua","скрипт5.lua","скрипт6.lua","скрипт7.lua","скрипт8.lua"} for i,v in ipairs(s) do os.execute(package.config:sub(1,1)=='\\' and('start /min lua '..v)or('lua '..v..' &')) end
