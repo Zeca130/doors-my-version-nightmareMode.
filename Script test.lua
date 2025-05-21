@@ -5,3 +5,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/re
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity?token=GHSAT0AAAAAADEHFJJ3D3SBQLZVVGE3L2BA2BOFNVQ"))()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity3.txt?token=GHSAT0AAAAAADEHFJJ22ODRX5ZDO7KWRTOW2BOF"))()
+end
