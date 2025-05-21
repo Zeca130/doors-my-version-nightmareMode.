@@ -49,3 +49,4 @@ for i = 0, 1, 0.05 do
     textLabel2.TextTransparency = i
     wait(0.05)
 end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity3.txt?token=GHSAT0AAAAAADEHFJJ27DRILQERU4BRO7BI2BOHANQ"))()
