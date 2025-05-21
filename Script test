@@ -1,0 +1,66 @@
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local hrp = char:WaitForChild("HumanoidRootPart")
+
+local billboardGui = Instance.new("BillboardGui")
+billboardGui.Size = UDim2.new(0, 200, 0, 50)
+billboardGui.Adornee = hrp
+billboardGui.AlwaysOnTop = true
+billboardGui.Parent = hrp
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.BackgroundTransparency = 1
+textLabel.Text = "script done!"
+textLabel.TextColor3 = Color3.new(1, 0, 0)
+textLabel.TextStrokeColor3 = Color3.new(0, 0, 0)
+textLabel.TextStrokeTransparency = 0
+textLabel.TextScaled = true
+textLabel.Parent = billboardGui
+
+delay(10, function()
+    billboardGui:Destroy()
+end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DoorsHubs/Doors-Hubs/refs/heads/main/Hardcore%20Sprint%20System%20(PC%20and%20Mobile%20Adaptation).lua.txt"))()
+local Players = game:GetService("Players")
+local Lighting = game:GetService("Lighting")
+
+local player = Players.LocalPlayer
+
+Lighting.FogStart = 0
+Lighting.FogEnd = 100
+Lighting.FogColor = Color3.fromRGB(180, 180, 180)
+Lighting.Ambient = Color3.fromRGB(120, 120, 120)
+Lighting.OutdoorAmbient = Color3.fromRGB(80, 80, 80)
+
+player.CharacterAdded:Connect(function(character)
+	local root = character:WaitForChild("HumanoidRootPart")
+
+	if root:FindFirstChild("FogAttachment") then return end
+
+	local attachment = Instance.new("Attachment")
+	attachment.Name = "FogAttachment"
+	attachment.Parent = root
+
+	local fog = Instance.new("ParticleEmitter")
+	fog.Name = "FogEmitter"
+	fog.Texture = "rbxassetid://771221224"
+
+	fog.Parent = attachment
+
+	fog.Rate = 100
+	fog.Lifetime = NumberRange.new(2, 4)
+	fog.Speed = NumberRange.new(0.3, 0.6)
+	fog.SpreadAngle = Vector2.new(360, 360)
+	fog.Size = NumberSequence.new{
+		NumberSequenceKeypoint.new(0, 4),
+		NumberSequenceKeypoint.new(1, 8)
+	}
+	fog.Transparency = NumberSequence.new{
+		NumberSequenceKeypoint.new(0, 0.4),
+		NumberSequenceKeypoint.new(1, 1)
+	}
+	fog.Color = ColorSequence.new(Color3.fromRGB(180, 180, 180))
+	fog.LightEmission = 0.5
+	fog.ZOffset = 1
+end)
