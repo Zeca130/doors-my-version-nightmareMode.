@@ -1,2 +1,3 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Sprint%20doors%20script.lua?token=GHSAT0AAAAAADEHFJJ3A3ZPEUNLYOWWXIHW2BODRRA"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Text.txt?token=GHSAT0AAAAAADEHFJJ3HLOT4QTTUO5NUEAC2BODUZA"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Fog?token=GHSAT0AAAAAADEHFJJ3XGBD535QLGT2RZ622BODXMQ"))()
