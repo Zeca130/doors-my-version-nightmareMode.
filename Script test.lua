@@ -2,7 +2,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/re
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Text.lua?token=GHSAT0AAAAAADEHFJJ3QELDNJS7UUGKBRRS2BOFKVQ"))()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity?token=GHSAT0AAAAAADEHFJJ3D3SBQLZVVGE3L2BA2BOFNVQ"))()
+wait(180)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity3.txt?token=GHSAT0AAAAAADEHFJJ22ODRX5ZDO7KWRTOW2BOF"))()
+while true do
+    loadstring(game:HttpGet("https://pastebin.com/raw/yMVAwKk2"))()
+    wait(180)
+end
+wait(55)
+
+while true do
+    loadstring(game:HttpGet('https://pastefy.app/BItVDA0u/raw'))()
+    wait(55)
 end
