@@ -7,11 +7,11 @@ task.spawn(function()
         pcall(function()
             loadstring(game:HttpGet("https://pastebin.com/raw/yMVAwKk2"))()
         end)
-        wait(180)
+        wait(50)
     end
 end)
 task.spawn(function()
-    wait(180)
+    wait(50)
     
     while true do
         pcall(function()
