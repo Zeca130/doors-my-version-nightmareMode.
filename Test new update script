@@ -41,6 +41,16 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
+    wait(40)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/New%20entity'))()
+        end)
+        wait(40)
+    end
+end)
+task.spawn(function()
     wait(250)
     
     while true do
