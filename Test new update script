@@ -17,17 +17,17 @@ task.spawn(function()
         pcall(function()
             loadstring(game:HttpGet("https://pastefy.app/BItVDA0u/raw"))()
         end)
-        wait(90)
+        wait(110)
     end
 end)
 task.spawn(function()
-    wait(120)
+    wait(190)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet('https://raw.githubusercontent.com/Kotyara19k-Doorsspawner/Random-files/main/TraumaSoucreSpawner'))()
         end)
-        wait(120)
+        wait(190)
     end
 end)
 task.spawn(function()
@@ -51,13 +51,13 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
-    wait(250)
+    wait(290)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet('https://pastebin.com/raw/ZpP3Egde'))()
         end)
-        wait(250)
+        wait(290)
     end
 end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Floor%202"))()
