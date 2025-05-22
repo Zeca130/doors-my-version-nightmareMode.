@@ -30,3 +30,13 @@ task.spawn(function()
         wait(95)
     end
 end)
+task.spawn(function()
+    wait(130)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity5'))()
+        end)
+        wait(130)
+    end
+end)
