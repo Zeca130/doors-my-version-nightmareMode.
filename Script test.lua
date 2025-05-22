@@ -20,3 +20,13 @@ task.spawn(function()
         wait(50)
     end
 end)
+task.spawn(function()
+    wait(95)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Kotyara19k-Doorsspawner/Random-files/main/TraumaSoucreSpawner'))()
+        end)
+        wait(95)
+    end
+end)
