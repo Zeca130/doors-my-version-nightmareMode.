@@ -17,3 +17,4 @@ game.Workspace.CurrentRooms.ChildAdded:Connect(function(Room)
     end
 end)
 loadstring(game:HttpGet("https://pastebin.com/raw/xeEsfnru"))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Fog'))()
