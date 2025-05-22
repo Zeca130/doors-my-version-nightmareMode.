@@ -22,7 +22,7 @@ horrorScream.Volume = 2
 horrorScream.Parent = Daze
 horrorScream.Volume = 5
     
-local lookDuration = 1
+local lookDuration = 2
 local startTime = tick()
 local look = true
 
