@@ -1,0 +1,100 @@
+local plr = game.Players.LocalPlayer
+local chr = plr.Character or plr.CharacterAdded:Wait()
+local cam = workspace.CurrentCamera
+local offsetgyat = 7
+local TweenService = game:GetService("TweenService")
+
+local Daze = game:GetObjects("rbxassetid://14123016442")[1]
+Daze.Parent = workspace
+local primary_part = Daze:FindFirstChildWhichIsA("BasePart") or Daze:FindFirstChildWhichIsA("Part")
+entity = primary_part
+entity.CFrame = chr.HumanoidRootPart.CFrame * CFrame.new(0, 0, -offsetgyat)
+entity.CanCollide = false
+local att = entity.Attachment.face
+att.Rate = 100
+att.Speed = NumberRange.new(10, 15)
+att.RotSpeed = NumberRange.new(-180, 180)
+att.Texture = "rbxassetid://115068922160874"
+
+local horrorScream = entity:WaitForChild("jumpscare")
+local sound = entity:WaitForChild("PlaySound")
+horrorScream.Volume = 2
+horrorScream.Parent = Daze
+horrorScream.Volume = 5
+    
+local lookDuration = 3
+local startTime = tick()
+local look = true
+
+local function Dmg()
+    local hum = chr:FindFirstChild("Humanoid")
+    local dmg = math.random(5, 10)
+        hum:TakeDamage(dmg)
+        if hum.Health <= 0 then
+        
+           local ReSt = game:GetService("ReplicatedStorage") 
+           ReSt.GameStats["Player_".. game.Players.LocalPlayer.Name].Total.DeathCause.Value = "Daze"
+        end
+end
+
+local function LookAt()
+    local direction = (entity.Position - cam.CFrame.Position).unit
+    local dot_product = direction:Dot(cam.CFrame.LookVector)
+    return dot_product > 0.8
+end
+
+local function Moving(target, dur)
+    local tween_info = TweenInfo.new(dur, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local tween = TweenService:Create(entity, tween_info, {CFrame = target})
+    tween:Play()
+    tween.Completed:Wait()
+end
+
+task.spawn(function()
+while look do wait(0)
+
+        if LookAt() then
+            if tick() - startTime >= lookDuration then
+                Dmg()
+                look = false
+                horrorScream:Play()
+                Moving(chr.HumanoidRootPart.CFrame, 0.4)
+                game:GetService("ReplicatedStorage").GameStats["Player_".. game.Players.LocalPlayer.Name].Total.DeathCause.Value = "Daze"
+                Moving(entity.CFrame * CFrame.new(0,-100,0), 5)
+                Daze:Destroy()
+            end
+        
+        elseif not LookAt() then
+            if tick() - startTime >= lookDuration then
+                look = false
+                Moving(entity.CFrame * CFrame.new(0,-100,0), 5)
+                Daze:Destroy()
+                
+                if not game:GetService("ReplicatedStorage"):FindFirstChild("Daze") then
+                local Test = Instance.new("Part")
+                Test.Name = "Daze"
+                Test.Parent = game:GetService("ReplicatedStorage")
+                local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+                achievementGiver({
+                Title = "Stay Tuned",
+                Desc = "Wake up!",
+                Reason = "Encounter Daze.",
+                Image = "rbxassetid://72305274740842"
+                })
+            	return
+                end
+
+            end
+            
+        end
+end
+end)
+
+task.spawn(function()
+while true do wait(0)
+if Daze.PlaySound then
+Daze.PlaySound.Volume = 0
+Daze.PlaySound:Destroy()
+end
+end
+end)
