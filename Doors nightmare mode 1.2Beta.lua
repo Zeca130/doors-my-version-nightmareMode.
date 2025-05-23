@@ -75,6 +75,4 @@ task.spawn(function()
         wait(600)
     end
 end)
-task.spawn(function()
-    wait(550)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Floor%202"))()
