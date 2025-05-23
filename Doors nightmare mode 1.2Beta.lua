@@ -66,23 +66,23 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
-    wait(450)
+    wait(500)
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Idk-lol2/a-60aa/refs/heads/main/---%3D%3D%3D%3D%3D%3D%20a-60%20agresiv%20spawner%20%3D%3D%3D%3D%3D%3D---.txt'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/A60'))()
         end)
         wait(600)
     end
 end)
 task.spawn(function()
-    wait(430)
+    wait(550)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/S.R%20Entity'))()
         end)
-        wait(590)
+        wait(690)
     end
 end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Floor%202"))()
