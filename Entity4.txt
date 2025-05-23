@@ -1,1 +1,152 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kotyara19k-Doorsspawner/Random-files/main/TraumaSoucreSpawner'))()
+local Spawner = loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd/DoorSuff/main/OtherSuff/DoorEntitySpawn%2BSource'))()
+
+
+-- Create entity
+local entity = Spawner.createEntity({
+    CustomName = "Trauma", -- Custom name of your entity
+    Model = "rbxassetid://12224846226", -- Can be GitHub file or rbxassetid
+    Speed = 200, -- Percentage, 70 = default Rush speed
+    DelayTime = 5, -- Time before starting cycles (seconds)
+    HeightOffset = 0,
+    CanKill = true,
+    NoDieOnCrouching = false,
+    NoHiding = false,
+    AntiCrucifix = false,
+    KillRange = 100,
+    OneRoom = false,
+    DieOnLook = false,
+    BreakLights = true,
+    BackwardsMovement = true,
+     MovementDeath = {
+        false, -- Turned On?
+        '1',  --- '1'= 'Instant Without Being Looked out' | '2' = 'With Being Looked At'
+    },
+    FlickerLights = {
+        true, -- Enabled/Disabled
+        5, -- Time (seconds)
+    },
+    Cycles = {
+        Min = 1,
+        Max = 1,
+        WaitTime = 2,
+    },
+    CamShake = {
+        false, -- Enabled/Disabled
+        {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
+        100, -- Shake start distance (from Entity to you)
+    },
+    Jumpscare = {
+        false, -- Enabled/Disabled
+        {
+            Type = "2", -- "Normal" or 1 | "Pop" or 2 | "endlessdoorsrebound" or "Rebound" or 3 | More coming Soon
+            Image1 = "nil", -- Image1 url
+            Image2 = "11278624160", -- Image2 url
+            Shake = true,
+            Sound1 = {
+                "0", -- SoundId Link or Roblox ID
+                { Volume = 0 }, -- Sound properties
+            },
+            Sound2 = {
+                "10483837590", -- SoundId Link or Roblox ID
+                { Volume = 5 }, -- Sound properties
+            },
+            Flashing = {
+                true, -- Enabled/Disabled
+                Color3.fromRGB(255, 255, 255), -- Color
+            },
+            Tease = {
+                true, -- Enabled/Disabled
+                Min = 1,
+                Max = 3,
+            },
+        },
+    },
+    Color = 'GuidingLight', -- CuriousLight ( Yellow ) | GuidingLight ( Blue )
+    DiffrentMessages = true,
+    CustomDialog = {  
+        {"You died to Trauma...", "Use what you've learned from Rush and Ambush!", "This Mob Randomly Spawns Theres No Patten to it"}, -- Death Messages
+        {"Stop Dieing"},
+        {"Bruh", "Use what you have learned from Rush!"},
+        {"It seems like Template is causing quite the ruckus...", "Hide in a closet or bed as quickly as possible!"},
+         {"I have told You What to do", "YOU JUST HAVE A SKILL ISSUE"}
+    }
+})
+
+-----[[ Advanced Sctipting ]]-----
+
+entity.Debug.OnEntityMoving = function(Invincible,Hiding,plrCollisionPoint)
+print("Invincible: "..tostring(Invincible))
+print("Player to Entity Collision (None hiding Point): "..tostring(plrCollisionPoint))
+print("Hiding: "..tostring(Hiding))
+end
+       
+entity.Debug.OnEntitySpawned = function()
+    print("Entity has spawned:")
+workspace.Trauma.Repent.PlayOnRemove = false
+workspace.Trauma.RushNew.PlaySound:Destroy()
+workspace.Trauma.RushNew.Attachment.BlackTrail:Destroy()
+workspace.Trauma.Ambience:Destroy()
+workspace.Trauma.Repent:Destroy()
+    local TweenService = game:GetService("TweenService")
+    local cue2 = Instance.new("Sound")
+    cue2.Parent = workspace.Claim.RushNew
+    cue2.Name = "Idle"
+    cue2.SoundId = "rbxassetid://8256091246"
+    cue2.Volume = 0
+    cue2.Pitch = 4
+    local shift = Instance.new("PitchShiftSoundEffect")
+    shift.Octave = 0.5
+    shift.Parent = cue2
+    local distort = Instance.new("DistortionSoundEffect")
+    distort.Level = 0.9
+    distort.Parent = cue2
+ cue2.RollOffMaxDistance = 90
+ cue2.RollOffMinDistance = 5
+ cue2.RollOffMode = Enum.RollOffMode.LinearSquare
+    local TW = TweenService:Create(cue2, TweenInfo.new(1.5),{Pitch = 0})
+    local TW1 = TweenService:Create(cue2, TweenInfo.new(0.5),{Pitch = 8})
+    local TW2 = TweenService:Create(cue2, TweenInfo.new(1.5),{Volume = 0})
+local TW3 = TweenService:Create(cue2, TweenInfo.new(1.5),{Volume = 1})
+    cue2:Play()
+    TW3:Play()
+    wait(9.5)
+    TW1:Play()
+    wait(0.5)
+ workspace.Claim.RushNew.Anchored = false
+ workspace.Claim.RushNew.CanCollide = false
+    TW:Play()
+    TW2:Play()
+    wait(2)
+    workspace.Claim:Destroy()
+    death:Destroy()
+    cue:Destroy()
+end
+
+entity.Debug.OnEntityDespawned = function()
+    print("Entity has despawned:")
+end
+
+entity.Debug.OnEntityStartMoving = function()
+    print("Entity has started moving:")
+end
+
+entity.Debug.OnEntityFinishedRebound = function()
+    print("Entity has finished rebound:")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("Entity:", "has entered room:",room)
+end
+
+entity.Debug.OnLookAtEntity = function()
+    print("Player has looked at entity:")
+end
+
+entity.Debug.OnDeath = function()
+    warn("Player has died.")
+end
+
+------------------------
+
+-- Run the created entity
+Spawner.runEntity(entity)
