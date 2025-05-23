@@ -28,7 +28,7 @@ local entity = spawner.Create({
 	},
 	Movement = {
 		Speed = 320,
-		Delay = 35,
+		Delay = 20,
 		Reversed = false
 	},
 	Rebounding = {
@@ -120,4 +120,4 @@ end)
 ---====== Run entity ======---
 
 entity:Run()
-Wait(105)
+Wait(48)
