@@ -28,7 +28,7 @@ local look = true
 
 local function Dmg()
     local hum = chr:FindFirstChild("Humanoid")
-    local dmg = math.random(5, 10)
+    local dmg = math.random(10, 15)
         hum:TakeDamage(dmg)
         if hum.Health <= 0 then
         
