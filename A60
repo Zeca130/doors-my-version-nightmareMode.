@@ -121,13 +121,3 @@ end)
 
 entity:Run()
 Wait(105)
----====== Load achievement giver ======---
-local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/Idk-lol2/a-60aa/refs/heads/main/fix%20bage.txt"))()
-
----====== Display achievement ======---
-achievementGiver({
-    Title = "Rebounds and Rebounds",
-    Desc = "How many times does this guy come back?!",
-    Reason = "Survive A-60.",
-    Image = "rbxassetid://125217047990746"
-})
