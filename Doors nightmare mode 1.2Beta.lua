@@ -77,12 +77,4 @@ task.spawn(function()
 end)
 task.spawn(function()
     wait(550)
-    
-    while true do
-        pcall(function()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/S.R%20Entity'))()
-        end)
-        wait(690)
-    end
-end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Floor%202"))()
