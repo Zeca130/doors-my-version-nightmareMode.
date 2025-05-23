@@ -20,7 +20,7 @@ task.spawn(function()
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://pastefy.app/BItVDA0u/raw"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Entity3.txt"))()
         end)
         wait(130)
     end
@@ -30,7 +30,7 @@ task.spawn(function()
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Kotyara19k-Doorsspawner/Random-files/main/TraumaSoucreSpawner'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Entity4.txt'))()
         end)
         wait(280)
     end
@@ -60,7 +60,7 @@ task.spawn(function()
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet('https://pastebin.com/raw/ZpP3Egde'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Entity6'))()
         end)
         wait(380)
     end
@@ -80,7 +80,7 @@ task.spawn(function()
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet('https://pastefy.app/YMa2CPBC/raw'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/S.R%20Entity'))()
         end)
         wait(480)
     end
