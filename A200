@@ -1,0 +1,113 @@
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/MuhXd/DoorSuff/main/OtherSuff/DoorEntitySpawn%2BSource"))()
+-- Create entity
+
+
+local entity = Creator.createEntity({
+    CustomName = "200", -- Custom name of your entity
+    Model = "https://github.com/Isth4t/DoorsModels/blob/main/200Moving.rbxm?raw=true", -- Can be GitHub file or rbxassetid
+    Speed = 210, -- Percentage, 55 = default Rush speed
+    DelayTime = 10, -- Time before starting cycles (seconds)
+    HeightOffset = 1,
+    CanKill = true,
+    KillRange = 100,
+    BreakLights = true,
+    BackwardsMovement = false,
+    FlickerLights = {
+        true, -- Enabled/Disabled
+        5, -- Time (seconds)
+    },
+    Cycles = {
+        Min = 2,
+        Max = 3,
+        WaitTime = 2,
+    },
+    CamShake = {
+        true, -- Enabled/Disabled
+        {5, 15, 0.1, 1}, -- Shake values (don't change if you don't know)
+        100, -- Shake start distance (from Entity to you)
+    },
+    Jumpscare = {
+        true, -- Enabled/Disabled
+        {
+            Image1 = "rbxassetid://11400868582", -- Image1 url
+            Image2 = "rbxassetid://11400871105", -- Image2 url
+            Shake = true,
+            Sound1 = {
+                530591527, -- SoundId
+                { Volume = 10 }, -- Sound properties
+            },
+            Sound2 = {
+                530591527, -- SoundId
+                { Volume = 10 }, -- Sound properties
+            },
+            Flashing = {
+                true, -- Enabled/Disabled
+                Color3.fromRGB(255, 255, 255), -- Color
+            },
+            Tease = {
+                false, -- Enabled/Disabled
+                Min = 4,
+                Max = 4,
+            },
+        },
+    },
+    CustomDialog = {"You died to who you call Ripper.", "You can tell his presence by the lights and his scream.", "Hide when he does this!"}, -- Custom death message
+})
+ 
+-----[[ Advanced ]]-----
+entity.Debug.OnEntitySpawned = function(entityTable)
+    print("Entity has spawned:", entityTable.Model)
+end
+ 
+entity.Debug.OnEntityDespawned = function(entityTable)
+end
+ 
+entity.Debug.OnEntityStartMoving = function(entityTable)
+    print("Entity has started moving:", entityTable.Model)
+end
+ 
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+    print("Entity has finished rebound:", entityTable.Model)
+end
+ 
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("Entity:", entityTable.Model, "has entered room:", room)
+end
+ 
+entity.Debug.OnLookAtEntity = function(entityTable)
+    print("Player has looked at entity:", entityTable.Model)
+end
+ 
+entity.Debug.OnDeath = function(entityTable)
+    warn("Player has died.")
+
+local func, setupval, getinfo, typeof, getgc, next = nil, debug.setupvalue or setupvalue, debug.getinfo or getinfo, typeof, getgc, next
+
+for i,v in next, getgc(false) do
+    if typeof(v) == "function" then
+        local info = getinfo(v)
+        if info.currentline == 54 and info.nups == 2 and info.is_vararg == 0 then
+            func = v
+            break
+        end
+    end
+end
+
+local function DeathHint(hints, type: string)
+    setupval(func, 1, hints)
+    if type ~= nil then
+        setupval(func, 2, type)
+    end
+end
+
+DeathHint({
+    "You died to 200.",
+    "It's very fast.",
+    "Hide when you hear it!"
+}, "Blue") -- "Blue" or "Yellow"
+
+end
+------------------------
+ 
+-- Run the created entity
+Creator.runEntity(entity)
