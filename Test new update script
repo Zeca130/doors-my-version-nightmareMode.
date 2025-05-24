@@ -86,6 +86,16 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
+    wait(370)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Silence"))()
+        end)
+        wait(500)
+    end
+end)
+task.spawn(function()
     wait(350)
     
     while true do
