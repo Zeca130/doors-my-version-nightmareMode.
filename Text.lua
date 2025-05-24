@@ -1,6 +1,7 @@
 local screenGui = Instance.new("ScreenGui")
 local textLabel1 = Instance.new("TextLabel")
 local textLabel2 = Instance.new("TextLabel")
+local textLabel3 = Instance.new("TextLabel")
 
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -25,6 +26,16 @@ textLabel2.TextSize = 28
 textLabel2.Font = Enum.Font.SourceSansBold
 textLabel2.TextTransparency = 1
 
+textLabel3.Parent = screenGui
+textLabel3.Size = UDim2.new(0, 300, 0, 70)
+textLabel3.Position = UDim2.new(0.5, -150, 0.6, -35)
+textLabel3.BackgroundTransparency = 1
+textLabel3.Text = "good luck"
+textLabel3.TextColor3 = Color3.fromRGB(255, 220, 150)
+textLabel3.TextSize = 28
+textLabel3.Font = Enum.Font.SourceSansBold
+textLabel3.TextTransparency = 1
+
 for i = 0, 1, 0.05 do
     textLabel1.TextTransparency = 1 - i
     wait(0.05)
@@ -46,6 +57,18 @@ wait(2)
 
 for i = 0, 1, 0.05 do
     textLabel2.TextTransparency = i
+    wait(0.05)
+end
+
+for i = 0, 1, 0.05 do
+    textLabel3.TextTransparency = 1 - i
+    wait(0.05)
+end
+
+wait(2)
+
+for i = 0, 1, 0.05 do
+    textLabel3.TextTransparency = i
     wait(0.05)
 end
 
