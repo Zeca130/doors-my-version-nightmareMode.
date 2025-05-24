@@ -26,16 +26,6 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
-    wait(220)
-    
-    while true do
-        pcall(function()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Entity4.txt'))()
-        end)
-        wait(350)
-    end
-end)
-task.spawn(function()
     wait(310)
     
     while true do
@@ -56,13 +46,13 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
-    wait(380)
+    wait(570)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Entity6'))()
         end)
-        wait(490)
+        wait(540)
     end
 end)
 task.spawn(function()
@@ -86,17 +76,17 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
-    wait(370)
+    wait(540)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Silence"))()
         end)
-        wait(500)
+        wait(560)
     end
 end)
 task.spawn(function()
-    wait(350)
+    wait(380)
     
     while true do
         pcall(function()
