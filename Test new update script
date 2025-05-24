@@ -85,4 +85,14 @@ task.spawn(function()
         wait(100)
     end
 end)
+task.spawn(function()
+    wait(350)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/A200"))()
+        end)
+        wait(470)
+    end
+end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Floor%202"))()
