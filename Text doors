@@ -1,6 +1,6 @@
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("doors nightmare mode loaded by Zeca140xx Version V2",true)
  wait(7)
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("join the discord group for more scripts and mods",true)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("join the discord group for more scripts and mods [discord.gg/B5DUDs7m]",true)
  wait(7)
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("wait loading fog and floor 2 and good luck",true)
  wait(7)
