@@ -8,11 +8,6 @@ task.spawn(function()
     end)
 end)
 task.spawn(function()
-    pcall(function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Fog'))()
-    end)
-end)
-task.spawn(function()
 wait(280)
     
     while true do
