@@ -1,6 +1,35 @@
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("",true)
 
-game.Workspace.CurrentRooms.ChildAdded:Connect(function(Room)
+
+local function getGitSoundId(GithubSoundPath: string, AssetName: string): Sound
+    local Url = GithubSoundPath
+
+    if not isfile(AssetName..".mp3") then 
+        writefile(AssetName..".mp3", game:HttpGet(Url)) 
+    end
+
+    local Sound = Instance.new("Sound")
+    Sound.SoundId = getcustomasset(AssetName..".mp3", true)
+    return Sound 
+end
+
+local CustomMusic = getGitSoundId("https://github.com/nervehammer1/throwawaystuff/raw/refs/heads/main/NightmareAmbient.mp3", "NightmareModeAmbient")
+CustomMusic.Parent = game.Workspace
+CustomMusic.Looped = true
+CustomMusic.Volume = 2
+CustomMusic:Play()
+
+task.spawn(function()
+    task.wait()
+    if game:GetService("Lighting"):FindFirstChild("Atmosphere") then
+        game.Lighting.Atmosphere:Destroy()
+    end
+    game.Lighting.FogColor = Color3.new(0.133333, 0.149020, 0.239216)
+    game.Lighting.FogEnd = 100
+    game.Lighting.FogStart = 0
+end)
+
+
+function convert(Room)
     task.wait(1.5)
     if Room:IsA("Model") then
         if tonumber(Room.Name) ~= nil then
@@ -8,12 +37,24 @@ game.Workspace.CurrentRooms.ChildAdded:Connect(function(Room)
                 if v:IsA("Part") or v:IsA("BasePart") or v:IsA("MeshPart") or v:IsA("UnionOperation") then
                     if v.Material == Enum.Material.Wood or v.Material == Enum.Material.WoodPlanks then
                         v.Color = Color3.fromRGB(60, 60, 60)
-                        v.Material = Enum.Material.Slate
-                        v.MaterialVariant = ""
+                        v.Material = Enum.Material.Limestone
+                    end
+                end
+            end
+            for _ , v in Room:GetDescendants() do
+                if v.Name == "Door" and v:IsA("MeshPart") then
+                    v.Color = Color3.fromRGB(70,70,70)
+                    v.Material = Enum.Material.Slate
+                    if v:FindFirstChild("Sign") then
+                        v.Sign:Destroy()
                     end
                 end
             end
         end
     end
-end)
-loadstring(game:HttpGet("https://pastebin.com/raw/xeEsfnru"))()
+end
+
+game.Workspace.CurrentRooms.ChildAdded:connect(convert)
+
+convert(game.Workspace.CurrentRooms:GetChildren()[1])
+convert(game.Workspace.CurrentRooms:GetChildren()[2])
