@@ -389,10 +389,10 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 	local stamPower = 100 -- Total stamina points
 
 
-	local stamTick = 2 -- How much the stamina goes down every tick of holding down the sprint button
+	local stamTick = 4 -- How much the stamina goes down every tick of holding down the sprint button
 
 
-	local regenTick = 0.5 -- How much the stamina goes back up every tick of not holding down the sprint button (until it hits stamPower max)
+	local regenTick = 0.6 -- How much the stamina goes back up every tick of not holding down the sprint button (until it hits stamPower max)
 
 
 
