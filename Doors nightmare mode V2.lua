@@ -1,13 +1,14 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Candle%20floor%202"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/README.md"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Text%20doors"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Txt%20for%20test%20script"))()
 task.spawn(function()
     pcall(function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Fog'))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Open%20doors%20custom"))()
+
     end)
 end)
 task.spawn(function()
-    wait(280)
+wait(280)
     
     while true do
         pcall(function()
@@ -87,6 +88,16 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
+    wait(500)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Rebound.txt"))()
+        end)
+        wait(670)
+    end
+end)
+task.spawn(function()
     wait(380)
     
     while true do
@@ -97,3 +108,4 @@ task.spawn(function()
     end
 end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Floor%202"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Txt"))()
