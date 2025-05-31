@@ -3,6 +3,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/re
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Txt%20for%20test%20new%20update%20script"))()
 task.spawn(function()
     pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Doors%20text%20Nightmare%20hotel"))()
+
+    end)
+end)
+task.spawn(function()
+    pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Open%20doors%20custom"))()
 
     end)
