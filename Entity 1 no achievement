@@ -238,6 +238,7 @@ function GitPNG(GithubImg, ImageName)
     return (getcustomasset or getsynasset)(ImageName .. ".png")
 end
 
+
 entity:SetCallback("OnDamagePlayer", function(newHealth)
 	if newHealth == 0 then
 		print("Entity has killed the player")
