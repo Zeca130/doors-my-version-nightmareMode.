@@ -1,0 +1,309 @@
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+
+---====== Wh1t3 ======---
+
+local entity = spawner.Create({
+	Entity = {
+		Name = "Wh1t3",
+		Asset = "rbxassetid://85396591341941",
+		HeightOffset = 2
+	},
+	Lights = {
+		Flicker = {
+			Enabled = true,
+			Duration = 1
+		},
+		Shatter = true,
+		Repair = false
+	},
+	Earthquake = {
+		Enabled = false
+	},
+	CameraShake = {
+		Enabled = true,
+		Range = 100,
+		Values = {5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
+	},
+	Movement = {
+		Speed = 350,
+		Delay = 8,
+		Reversed = false
+	},
+	Rebounding = {
+		Enabled = true,
+		Type = "Ambush", -- "Blitz"
+		Min = 2,
+		Max = 2,
+		Delay = 0.01
+	},
+	Damage = {
+		Enabled = true,
+		Range = 100,
+		Amount = 0.01
+	},
+	Crucifixion = {
+		Enabled = true,
+		Range = 120,
+		Resist = true,
+		Break = true
+	},
+	Death = {
+		Type = "Guiding", -- "Curious"
+		Hints = {"Death", "Hints", "Go", "Here"},
+		Cause = ""
+	}
+})
+
+---====== Debug entity ======---
+
+entity:SetCallback("OnSpawned", function()
+game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(255, 0, 0)
+game.Lighting.MainColorCorrection.Contrast = 1
+local tween = game:GetService("TweenService")
+tween:Create(game.Lighting.MainColorCorrection, TweenInfo.new(2.5), {Contrast = 0}):Play()
+local TweenService = game:GetService("TweenService")
+local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(50),{TintColor = Color3.fromRGB(255, 255, 255)})
+TW:Play()
+    local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://"..131489490
+	sound.Looped = false
+	sound.Parent = workspace.Wh1t3
+	sound.Volume = 5
+	sound.PlaybackSpeed = 0.85
+	sound:Play()
+local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+local camara = game.Workspace.CurrentCamera
+local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(cf)
+	camara.CFrame = camara.CFrame * cf
+end)
+camShake:Start()
+camShake:Shake(CameraShaker.Presets.Earthquake)
+
+if not game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("Glitchy") then
+	local Glitchy = Instance.new("ScreenGui")
+	local GlitchScreen = Instance.new("Frame")
+	local Glitch1 = Instance.new("ImageLabel")
+	local Glitch2 = Instance.new("ImageLabel")
+	local Glitch3 = Instance.new("ImageLabel")
+	
+	--Properties:
+	
+	Glitchy.Name = "Glitchy"
+	Glitchy.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Glitchy.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	
+	GlitchScreen.Name = "Glitch Screen"
+	GlitchScreen.Parent = Glitchy
+	GlitchScreen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GlitchScreen.BackgroundTransparency = 1.000
+	GlitchScreen.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GlitchScreen.BorderSizePixel = 0
+	GlitchScreen.Size = UDim2.new(1, 1, 1, 1)
+	
+	Glitch1.Name = "Glitch1"
+	Glitch1.Parent = GlitchScreen
+	Glitch1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Glitch1.BackgroundTransparency = 1.000
+	Glitch1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Glitch1.BorderSizePixel = 0
+	Glitch1.Visible = false
+	Glitch1.Size = UDim2.new(1, 1, 1, 1)
+	Glitch1.Image = "rbxassetid://15959966417"
+	Glitch1.ImageTransparency = 0.800
+	
+	Glitch2.Name = "Glitch2"
+	Glitch2.Parent = GlitchScreen
+	Glitch2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Glitch2.BackgroundTransparency = 1.000
+	Glitch2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Glitch2.BorderSizePixel = 0
+	Glitch2.Visible = false
+	Glitch2.Size = UDim2.new(1, 1, 1, 1)
+	Glitch2.Image = "rbxassetid://15959979240"
+	Glitch2.ImageTransparency = 0.800
+	
+	Glitch3.Name = "Glitch3"
+	Glitch3.Parent = GlitchScreen
+	Glitch3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Glitch3.BackgroundTransparency = 1.000
+	Glitch3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Glitch3.BorderSizePixel = 0
+	Glitch3.Visible = false
+	Glitch3.Size = UDim2.new(1, 1, 1, 1)
+	Glitch3.Image = "rbxassetid://12590547162"
+	Glitch3.ImageTransparency = 0.800
+end
+end)
+
+entity:SetCallback("OnStartMoving", function()
+local redtweeninfo = TweenInfo.new(3)
+local redinfo = {Color = Color3.fromRGB(100, 0, 0)}
+
+----------
+
+for i,v in pairs(workspace.CurrentRooms:GetDescendants()) do
+			if v:IsA("Light") then
+					game.TweenService:Create(v,redtweeninfo,redinfo):Play()
+					if v.Parent.Name == "LightFixture" then
+						    game.TweenService:Create(v.Parent,redtweeninfo,redinfo):Play()
+					end
+		  end
+end
+local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+local camara = game.Workspace.CurrentCamera
+local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCf)
+ camara.CFrame = camara.CFrame * shakeCf
+end)
+camShake:Start()
+camShake:ShakeOnce(6,5,0,2,1,6)
+end)
+
+entity:SetCallback("OnLookAt", function(lineOfSight)
+	if lineOfSight == true then
+		local FPS = 5
+    local clock = tick()
+        while clock + 1 / FPS > tick() do end
+    wait()
+    clock = tick()
+		if game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
+        game.Players.LocalPlayer.Character.Humanoid.Health -= 2.5
+        if game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("Glitchy") then
+    local Gglitchy = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("Glitchy")
+    local Gglitch1 = Gglitchy["Glitch Screen"].Glitch1
+    local Gglitch2 = Gglitchy["Glitch Screen"].Glitch2
+    local Gglitch3 = Gglitchy["Glitch Screen"].Glitch3
+            if Gglitch1.Visible == false and Gglitch2.Visible == false and Gglitch3.Visible == false then
+    	    	Gglitch1.Visible = true
+                Gglitch1.ImageTransparency = 0.8
+                game:GetService("TweenService"):Create(Gglitch1, TweenInfo.new(1.5), {ImageTransparency = 1}):Play()
+        	end
+        	if Gglitch1.Visible == true and Gglitch2.Visible == false then
+        		Gglitch2.Visible = true
+                Gglitch2.ImageTransparency = 0.8
+                game:GetService("TweenService"):Create(Gglitch2, TweenInfo.new(1.5), {ImageTransparency = 1}):Play()
+        		Gglitch1.Visible = false
+        	elseif Gglitch2.Visible == true and Gglitch3.Visible == false then
+        		Gglitch3.Visible = true
+                Gglitch3.ImageTransparency = 0.8
+                game:GetService("TweenService"):Create(Gglitch3, TweenInfo.new(1.5), {ImageTransparency = 1}):Play()
+        		Gglitch2.Visible = false
+        	elseif Gglitch3.Visible == true and Gglitch1.Visible == false then
+        		Gglitch1.Visible = true
+                Gglitch1.ImageTransparency = 0.8
+                game:GetService("TweenService"):Create(Gglitch1, TweenInfo.new(1.5), {ImageTransparency = 1}):Play()
+        		Gglitch3.Visible = false
+        	end
+    end
+    end
+	else
+		warn(" Wh1t3 UwU ")
+	end
+end)
+
+entity:SetCallback("OnDespawning", function()
+    print("Entity is despawning")
+    local Gglitchy = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("Glitchy")
+    local Gglitch1 = Gglitchy["Glitch Screen"].Glitch1
+    local Gglitch2 = Gglitchy["Glitch Screen"].Glitch2
+    local Gglitch3 = Gglitchy["Glitch Screen"].Glitch3
+    Gglitch1.Visible = false
+    Gglitch2.Visible = false
+    Gglitch3.Visible = false
+    caa = 0
+tween = game:GetService("TweenService")
+local TestMultplayer = true
+if game:GetService("ReplicatedStorage"):FindFirstChild("White") then
+    warn("Survive wh1t3")
+    return true
+end
+
+local Test = Instance.new("Part")
+Test.Name = "White"
+Test.Parent = game:GetService("ReplicatedStorage")
+Test = 1
+function GitPNG(GithubImg, ImageName)
+    local url = GithubImg
+    if not isfile(ImageName .. ".png") then
+        local success, response = pcall(function()
+            return game:HttpGet(url)
+        end)
+        if success then
+            writefile(ImageName .. ".png", response)
+        else
+            error(": " .. response)
+        end
+    end
+    return (getcustomasset or getsynasset)(ImageName .. ".png")
+end
+
+entity:SetCallback("OnDamagePlayer", function(newHealth)
+	if newHealth == 0 then
+		print("Entity has killed the player")
+	else
+	game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):TakeDamage(30)
+	game:GetService("ReplicatedStorage").GameStats["Player_".. game.Players.LocalPlayer.Name].Total.DeathCause.Value = "Wh1t3"
+	task.spawn(function()
+	if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then
+        loadstring(game:HttpGet("https://pastefy.app/famDWh93/raw"))()
+        task.wait(3)
+		game.Players.LocalPlayer:Kick(' You Die To "Wh1t3" ')
+		wait(3)
+        game:Shutdown()
+     end
+            local Debuffs = Instance.new("ScreenGui")
+			local WH1T3 = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local ImageLabel = Instance.new("ImageLabel")
+			local Speed_Debuff = Instance.new("TextLabel")
+			Debuffs.Name = "Debuffs"
+			Debuffs.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+			Debuffs.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+			WH1T3.Name = "WH1T3"
+			WH1T3.Parent = Debuffs
+			WH1T3.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+			WH1T3.BackgroundTransparency = 0.500
+			WH1T3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			WH1T3.BorderSizePixel = 0
+			WH1T3.Position = UDim2.new(0.830811501, -1, 0.936082482, -1)
+			WH1T3.Size = UDim2.new(0.169188485, 1, 0.0639175251, 1)
+			UICorner.Parent = WH1T3
+			ImageLabel.Parent = WH1T3
+			ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ImageLabel.BackgroundTransparency = 1.000
+			ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ImageLabel.BorderSizePixel = 0
+			ImageLabel.Position = UDim2.new(4.92218874e-07, 0, 0, 0)
+			ImageLabel.Size = UDim2.new(0.266129375, 1, 1, 1)
+			ImageLabel.Image = "rbxassetid://12096064117"
+			Speed_Debuff.Name = "Speed_Debuff"
+			Speed_Debuff.Parent = WH1T3
+			Speed_Debuff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Speed_Debuff.BackgroundTransparency = 1.000
+			Speed_Debuff.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Speed_Debuff.BorderSizePixel = 0
+			Speed_Debuff.Size = UDim2.new(1, 1, 1, 1)
+			Speed_Debuff.Font = Enum.Font.Unknown
+			Speed_Debuff.Text = "     -50% Speed"
+			Speed_Debuff.TextColor3 = Color3.fromRGB(100, 0, 0)
+			Speed_Debuff.TextSize = 14.000
+			Speed_Debuff.TextStrokeTransparency = 0.000
+			game:GetService("RunService").RenderStepped:Connect(function()
+            if workspace:FindFirstChild("SeekMoving") then
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23
+            elseif not workspace:FindFirstChild("SeekMoving") then
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = math.random(10, 12.5)
+            end
+            end)
+       end)
+	end
+end)
+
+entity:SetCallback("CrucifixionOverwrite", function()
+    print("Custom crucifixion callback")
+end)
+
+---====== Run entity ======---
+
+entity:Run()
