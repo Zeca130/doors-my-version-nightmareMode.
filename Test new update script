@@ -88,13 +88,13 @@ task.spawn(function()
     end
 end)
 task.spawn(function()
-    wait(400)
+    wait(600)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Revoker"))()
         end)
-        wait(600)
+        wait(700)
     end
 end)
 task.spawn(function()
