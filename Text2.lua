@@ -3,4 +3,4 @@ require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("join the discord group for more scripts and mods [discord.gg/B5DUDs7m]",true)
  wait(6)
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Loading floor 2 and good luck",true)
- wait(6)
+ wait(2)
