@@ -21,7 +21,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 local entity = Spawner.createEntity({
     CustomName = "Grundge",
     Model = "rbxassetid://18605324344", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
-    Speed = 400,
+    Speed = 300,
     MoveDelay = 8,
     HeightOffset = 0.6,
     CanKill = true,
@@ -33,8 +33,8 @@ local entity = Spawner.createEntity({
         Duration = 7
     },
     Cycles = {
-        Min = 4,
-        Max = 6,
+        Min = 3,
+        Max = 4,
         Delay = 2
     },
     CamShake = {
