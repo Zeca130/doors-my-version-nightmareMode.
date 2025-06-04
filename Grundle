@@ -1,0 +1,91 @@
+---====== idkcolor Lights ======---
+local gruh = workspace.CurrentRooms
+local colorinfo = TweenInfo.new(3)
+local colorcolor = {Color = Color3.fromRGB(61, 0, 152)}
+
+for i, lights in pairs(gruh:GetDescendants()) do
+	if lights:IsA("Light") then	
+		game:GetService("TweenService"):Create(lights, colorinfo, colorcolor):Play()
+		if lights.Parent.Name == "LightFixture" then
+			game:GetService("TweenService"):Create(lights.Parent, colorinfo, colorcolor):Play()
+		end
+	end
+end
+
+---====== Define spawner ======---
+
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V1/Source.lua"))()
+
+---====== Create entity ======---
+
+local entity = Spawner.createEntity({
+    CustomName = "Grundge",
+    Model = "rbxassetid://18605324344", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
+    Speed = 400,
+    MoveDelay = 8,
+    HeightOffset = 0.6,
+    CanKill = true,
+    KillRange = 50,
+    SpawnInFront = false,
+    ShatterLights = true,
+    FlickerLights = {
+        Enabled = true,
+        Duration = 7
+    },
+    Cycles = {
+        Min = 4,
+        Max = 6,
+        Delay = 2
+    },
+    CamShake = {
+        Enabled = true,
+        Values = {45, 15, 0.1, 1},
+        Range = 100
+    },
+    ResistCrucifix = false,
+    BreakCrucifix = true,
+    DeathMessage = {"Custom", "death", "message", "goes", "here."},
+    IsCuriousLight = false
+})
+
+---====== Debug ======---
+
+entity.Debug.OnEntitySpawned = function()
+    print("Entity has spawned")
+end
+
+entity.Debug.OnEntityDespawned = function()
+    print("Entity has despawned")
+end
+
+entity.Debug.OnEntityStartMoving = function()
+    print("Entity started moving")
+end
+
+entity.Debug.OnEntityFinishedRebound = function()
+    print("Entity finished rebound")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(room)
+    print("Entity entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function()
+    print("Player looking at entity")
+end
+
+entity.Debug.OnDeath = function()
+    print("Player has died")
+end
+
+--[[
+    NOTE: By overwriting 'OnUseCrucifix', the default crucifixion will be ignored and this function will be called instead
+
+    entity.Debug.OnUseCrucifix = function()
+        print("Custom crucifixion script here")
+    end
+]]--
+
+---====== Run entity ======---
+
+Spawner.runEntity(entity)
