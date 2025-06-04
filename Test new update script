@@ -147,6 +147,36 @@ wait(300)
         wait(400)
     end
 end)
+task.spawn(function()
+wait(250)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/A10"))()
+        end)
+        wait(450)
+    end
+end) 
+task.spawn(function()
+wait(400)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/236.lua"))()
+        end)
+        wait(500)
+    end
+end)
+task.spawn(function()
+wait(750)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Grundge"))()
+        end)
+        wait(890)
+    end
+end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Floor%202"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Txt"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Doors%20text%20Nightmare%20hotel"))()
