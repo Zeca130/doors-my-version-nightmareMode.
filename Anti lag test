@@ -1,8 +1,8 @@
 local Settings = {
-    MaxParticles = 150,
-    DebrisLifetime = 14,
-    PhysicsThrottle = 0.8,
-    OptimizePerFrame = 100
+    MaxParticles = 100,
+    DebrisLifetime = 10,
+    PhysicsThrottle = 0.6,
+    OptimizePerFrame = 50
 }
 
 local function SetupLighting()
