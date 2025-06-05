@@ -1,48 +1,30 @@
-local Settings = {
-    MaxParticles = 100,
-    DebrisLifetime = 10,
-    PhysicsThrottle = 0.6,
-    OptimizePerFrame = 50
-}
-
-local function SetupLighting()
-    game:GetService("Lighting").GlobalShadows = false
-end
-
-local function ControlParticles()
-    local count = 0
-    for _, obj in ipairs(workspace:GetDescendants()) do
-        if obj:IsA("ParticleEmitter") then
-            count += 1
-            if count > Settings.MaxParticles then
-                obj.Enabled = false
+local function DeltaAntiLag()
+    local lighting = game:GetService("Lighting")
+    local physics = game:GetService("PhysicsService")
+    
+    lighting.GlobalShadows = false
+    physics.PhysicsEnvironmentalThrottle = 0.7
+    
+    if game:GetService("RunService"):IsEngineFeature("Delta") then
+        pcall(function()
+            lighting:SetAttribute("Delta_ShadowsQuality", 0)
+            lighting:SetAttribute("Delta_LODQuality", 1)
+        end)
+    end
+    
+    task.spawn(function()
+        for i, obj in ipairs(workspace:GetDescendants()) do
+            if obj:IsA("BasePart") then
+                obj.CanCollide = false
+                obj.CanQuery = false
+                if i % 250 == 0 then task.wait() end
+            elseif obj:IsA("ParticleEmitter") then
+                obj.LightEmission = 0
+                obj.LightInfluence = 0
             end
         end
-    end
-end
-
-local function OptimizePhysics()
-    game:GetService("PhysicsService").PhysicsEnvironmentalThrottle = Settings.PhysicsThrottle
-end
-
-local function OptimizeParts()
-    local parts = workspace:GetDescendants()
-    for i = 1, #parts, Settings.OptimizePerFrame do
-        for j = i, math.min(i + Settings.OptimizePerFrame - 1, #parts) do
-            local part = parts[j]
-            if part:IsA("BasePart") then
-                part.CanCollide = false
-                part.CanQuery = false
-            end
-        end
-        task.wait()
-    end
+    end)
 end
 
 game.Loaded:Wait()
-task.delay(1, function()
-    SetupLighting()
-    ControlParticles()
-    OptimizePhysics()
-    task.spawn(OptimizeParts)
-end)
+task.delay(2, DeltaAntiLag)
