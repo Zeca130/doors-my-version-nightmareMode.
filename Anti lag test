@@ -1,0 +1,48 @@
+local Settings = {
+    MaxParticles = 250,
+    DebrisLifetime = 15,
+    PhysicsThrottle = 0.8,
+    OptimizePerFrame = 200
+}
+
+local function SetupLighting()
+    game:GetService("Lighting").GlobalShadows = false
+end
+
+local function ControlParticles()
+    local count = 0
+    for _, obj in ipairs(workspace:GetDescendants()) do
+        if obj:IsA("ParticleEmitter") then
+            count += 1
+            if count > Settings.MaxParticles then
+                obj.Enabled = false
+            end
+        end
+    end
+end
+
+local function OptimizePhysics()
+    game:GetService("PhysicsService").PhysicsEnvironmentalThrottle = Settings.PhysicsThrottle
+end
+
+local function OptimizeParts()
+    local parts = workspace:GetDescendants()
+    for i = 1, #parts, Settings.OptimizePerFrame do
+        for j = i, math.min(i + Settings.OptimizePerFrame - 1, #parts) do
+            local part = parts[j]
+            if part:IsA("BasePart") then
+                part.CanCollide = false
+                part.CanQuery = false
+            end
+        end
+        task.wait()
+    end
+end
+
+game.Loaded:Wait()
+task.delay(1, function()
+    SetupLighting()
+    ControlParticles()
+    OptimizePhysics()
+    task.spawn(OptimizeParts)
+end)
