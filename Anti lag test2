@@ -1,0 +1,19 @@
+local function SafeLoad()
+    if not game:IsLoaded() then game.Loaded:Wait() end
+    repeat wait(0.5) until game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+end
+
+local function DeltaMain()
+    while wait(1) do
+    end
+end
+
+local success, err = pcall(function()
+    SafeLoad()
+    DeltaMain()
+end)
+
+if not success then
+    wait(5)
+    DeltaMain()
+end
