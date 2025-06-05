@@ -18,13 +18,13 @@ wait(280)
     end
 end)
 task.spawn(function()
-    wait(90)
+    wait(100)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Entity3.txt"))()
         end)
-        wait(155)
+        wait(180)
     end
 end)
 task.spawn(function()
