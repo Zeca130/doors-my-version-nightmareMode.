@@ -94,7 +94,7 @@ achievementGiver({
     Title = "Nightmare rush",
     Desc = "Rush",
     Reason = "Survive the Entity Nightmare rush ",
-    Image = "https://raw.githubusercontent.com/Zeca130/Doors-mode-/refs/heads/main/images.jpeg?token=GHSAT0AAAAAADELHFRGBLBJVPRPO7BOV2NK2CEHUOQ"
+    Image = "rbxassetid://93803904036126"
 })
 Followed:Destroy()
 end
