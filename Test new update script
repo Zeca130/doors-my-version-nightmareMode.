@@ -22,7 +22,7 @@ task.spawn(function()
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Entity3.txt"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Depth"))()
         end)
         wait(180)
     end
