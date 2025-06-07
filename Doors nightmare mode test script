@@ -128,13 +128,13 @@ wait(450)
     end
 end) 
 task.spawn(function()
-wait(480)
+wait(600)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Monoxide/refs/heads/main/Monoxide"))()
         end)
-        wait(590)
+        wait(750)
     end
 end)
 task.spawn(function()
