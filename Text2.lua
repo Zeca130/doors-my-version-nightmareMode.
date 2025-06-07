@@ -2,7 +2,5 @@ require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("
  wait(6)
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("credits: zeca140xx, SESON KC[candle script], Hungered,",true)
  wait(6)
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("discorde [https://discord.gg/M7Dr8cyU] where are the scripts and mods",true)
- wait(6)
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Loading floor 2 and good luck",true)
  wait(3)
