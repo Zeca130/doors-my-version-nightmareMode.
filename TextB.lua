@@ -1,4 +1,4 @@
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("doors nightmare mode loaded by Zeca140xx Version V3.5 test",true)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("doors nightmare mode loaded by Zeca140xx Version V3.5",true)
  wait(6)
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("credits: zeca140xx, SESON KC[candle script], Hungered,",true)
  wait(6)
