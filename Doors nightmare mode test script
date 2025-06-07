@@ -18,26 +18,6 @@ wait(280)
     end
 end)
 task.spawn(function()
-    wait(100)
-    
-    while true do
-        pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Depth"))()
-        end)
-        wait(180)
-    end
-end)
-task.spawn(function()
-    wait(450)
-    
-    while true do
-        pcall(function()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/Entity5'))()
-        end)
-        wait(540)
-    end
-end)
-task.spawn(function()
     wait(40)
     
     while true do
