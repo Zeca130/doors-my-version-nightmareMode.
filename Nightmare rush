@@ -5,7 +5,7 @@ local Spawner = loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd
 local entity = Spawner.createEntity({
     CustomName = "Nightmare Rush", -- Custom name of your entity
     Model = "rbxassetid://73813782576461", -- Can be GitHub file or rbxassetid
-    Speed = 120, -- Percentage, 100 = default Rush speed
+    Speed = 130, -- Percentage, 100 = default Rush speed
     DelayTime = 3, -- Time before starting cycles (seconds)
     HeightOffset = 1,
     CanKill = true,
@@ -22,7 +22,7 @@ local entity = Spawner.createEntity({
         '1',  --- '1'= 'Instant Without Being Looked out' | '2' = 'With Being Looked At'
     },
     FlickerLights = {
-        true, -- Enabled/Disabled
+        false, -- Enabled/Disabled
         80 -- Time (seconds)
     },
     Cycles = {
@@ -42,11 +42,11 @@ local entity = Spawner.createEntity({
             Image2 = "rbxassetid://11394048190", -- Image2 url
             Shake = true,
             Sound1 = {
-                2867566615, -- SoundId
+                10483790459, -- SoundId
                 { Volume = 0.5 }, -- Sound properties
             },
             Sound2 = {
-                2867566615, -- SoundId
+                10483837590, -- SoundId
                 { Volume = 0.5 }, -- Sound properties
             },
             Flashing = {
@@ -91,9 +91,9 @@ local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 ---====== Display achievement ======---
 achievementGiver({
-    Title = "nighTmare RusH",
-    Desc = "rUsH?",
-    Reason = "Survive the Entity Nightmare Rush",
+    Title = "Nightmare rush",
+    Desc = "Rush",
+    Reason = "Survive the Entity Nightmare rush ",
     Image = "rbxassetid://3100736018"
 })
 Followed:Destroy()
