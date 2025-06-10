@@ -1,3 +1,4 @@
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 ---====== idkcolor Lights ======---
 local gruh = workspace.CurrentRooms
 local colorinfo = TweenInfo.new(3)
