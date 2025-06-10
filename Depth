@@ -40,8 +40,8 @@ local entity = Spawner.createEntity({
         true, -- Enabled/Disabled
         {
             Type = "2", -- "Normal" or 1 | "Pop" or 2 | "endlessdoorsrebound" or "Rebound" or 3 | More coming Soon
-            Image1 = "rbxassetid://18772587322", -- Image1 url
-            Image2 = "rbxassetid://18772587322", -- Image2 url
+            Image1 = "rbxassetid://12545106439", -- Image1 url
+            Image2 = "rbxassetid://12545106439", -- Image2 url
             Shake = true,
             Sound1 = {
                 "0", -- SoundId Link or Roblox ID
