@@ -1,3 +1,4 @@
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(0, 206, 209)
 game.Lighting.MainColorCorrection.Contrast = 10
 local tween = game:GetService("TweenService")
