@@ -1,0 +1,103 @@
+local Spawner = loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd/DoorSuff/main/OtherSuff/DoorEntitySpawn%2BSource'))()
+
+if math.random(100) <= 30 then
+local entity = Spawner.createEntity({
+CustomName = "Nightmare glitch",
+Model = "rbxassetid://115181693307607",
+Speed = 170,
+DelayTime = 5,
+HeightOffset = 0.1,
+CanKill = true,
+NoDieOnCrouching = false,
+NoHiding = false,
+AntiCrucifix = false,
+KillRange = 60,
+OneRoom = false,
+DieOnLook = false,
+BreakLights = true,
+BackwardsMovement = false,
+MovementDeath = {false, '1'},
+FlickerLights = {true, 4},
+Cycles = {Min = 4, Max = 6, WaitTime = 2},
+CamShake = {true, {3.5, 20, 0.1, 1}, 30},
+Jumpscare = {
+    true,
+    {
+        Type = "1",
+        Image1 = "rbxassetid://12545106439",
+        Image2 = "rbxassetid://12545106439",
+        Shake = true,
+        Sound1 = {"0", {Volume = 0}},
+        Sound2 = {"5263560566", {Volume = 3}},
+        Flashing = {true, Color3.fromRGB(58, 203, 255)},
+        Tease = {false, Min = 1, Max = 1}
+    }
+},
+Color = 'GuidingLight',
+DiffrentMessages = false,
+CustomDialog = {
+    {"Claim has seen you.", "It will consume anyone on sight.", "It takes a bit to fully spawn in", "so you can use that to your advantage."},
+    {"Stop Dieing"},
+    {"Bruh", "Use what you have learned from Rush!"},
+    {"It seems like Template is causing quite the ruckus...", "Hide in a closet or bed as quickly as possible!"},
+    {"I have told You What to do", "YOU JUST HAVE A SKILL ISSUE"}
+}})
+
+entity.Debug.OnEntitySpawned = function()
+print("Entity has spawned:")
+local cue2 = Instance.new("Sound")
+cue2.Parent = game.Workspace
+cue2.Name = "Spawn"
+cue2.SoundId = "rbxassetid://3359047385"
+cue2.Volume = 4.5
+cue2.PlaybackSpeed = 1
+cue2:Play()
+game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(255, 255, 255)
+game.Lighting.MainColorCorrection.Contrast = 10
+local tween = game:GetService("TweenService")
+tween:Create(game.Lighting.MainColorCorrection, TweenInfo.new(2.5), {Contrast = 0}):Play()
+local TW = tween:Create(game.Lighting.MainColorCorrection, TweenInfo.new(5),{TintColor = Color3.fromRGB(110, 0, 110)})
+TW:Play()
+end
+
+entity.Debug.OnEntityDespawned = function()
+print("Entity has despawned:")
+wait(3)
+game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(250, 0, 0)
+game.Lighting.MainColorCorrection.Contrast = 10
+local tween = game:GetService("TweenService")
+tween:Create(game.Lighting.MainColorCorrection, TweenInfo.new(2.5), {Contrast = 0}):Play()
+local TW = tween:Create(game.Lighting.MainColorCorrection, TweenInfo.new(5),{TintColor = Color3.fromRGB(255, 255, 255)})
+TW:Play()
+local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+achievementGiver({
+Title = "GLITCH GLITCH GLITCH",
+Desc = "I GLITCH WGLITCH KILL GLITCH",
+Reason = "Survive the Entity nightmare gltich",
+Image = "rbxassetid://"
+})
+end
+
+entity.Debug.OnDeath = function()
+warn("Player has died.")
+local func, setupval = debug.setupvalue or setupvalue
+for i,v in next, getgc(false) do
+    if typeof(v) == "function" then
+        local info = debug.getinfo(v)
+        if info.currentline == 54 and info.nups == 2 and info.is_vararg == 0 then
+            func = v
+            break
+        end
+    end
+end
+setupval(func, 1, {
+    "You died to who you Call G-95",
+    "This Entity its So Faster So try Hide",
+    "Its from to hell He Make YoU Suffer",
+    "..-so avoid Eye Contact"
+})
+setupval(func, 2, "Blue")
+end
+
+Spawner.runEntity(entity)
+end
