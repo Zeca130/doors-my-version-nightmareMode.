@@ -142,7 +142,7 @@ wait(750)
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Grundge"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Grundge.lua"))()
         end)
         wait(890)
     end
