@@ -1,3 +1,4 @@
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 local Spawner = loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd/DoorSuff/main/OtherSuff/DoorEntitySpawn%2BSource'))()
 
 if math.random(100) <= 30 then
