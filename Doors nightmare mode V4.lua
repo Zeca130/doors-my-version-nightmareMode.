@@ -1,6 +1,7 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Screech%3F"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Candle%20floor%202"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/README.md"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/TextD.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/TextP.txt"))()
 task.spawn(function()
     pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Open%20doors%20custom"))()
@@ -8,13 +9,13 @@ task.spawn(function()
     end)
 end)
 task.spawn(function()
-wait(280)
+wait(600)
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/yMVAwKk2"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Nightmare%20entity"))()
         end)
-        wait(390)
+        wait(700)
     end
 end)
 task.spawn(function()
@@ -72,7 +73,7 @@ task.spawn(function()
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/A200"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/200"))()
         end)
         wait(470)
     end
@@ -92,7 +93,7 @@ wait(560)
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Struggle.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Struggle"))()
         end)
         wait(690)
     end
@@ -102,7 +103,7 @@ wait(900)
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Red%20face.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Red%20face"))()
         end)
         wait(990)
     end
@@ -122,7 +123,7 @@ wait(450)
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Nightmare%20rush.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Nightmare%20rush"))()
         end)
         wait(560)
     end
@@ -142,7 +143,7 @@ wait(750)
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Grundge.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Grundge"))()
         end)
         wait(890)
     end
@@ -157,6 +158,41 @@ task.spawn(function()
         wait(180)
     end
 end)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Floor%202"))()
+task.spawn(function()
+    wait(500)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Silent.lua"))()
+        end)
+        wait(560)
+    end
+end)
+task.spawn(function()
+    wait(500)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Nightmare%20glitch"))()
+        end)
+        wait(560)
+    end
+end)
+task.spawn(function()
+    wait(700)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Guardian"))()
+        end)
+        wait(790)
+    end
+end)
+task.spawn(function()
+    pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/New%20floor%202"))()
+
+    end)
+end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Txt3"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Doors%20text%20Nightmare%20hotel"))()
