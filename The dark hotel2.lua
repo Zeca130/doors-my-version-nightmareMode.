@@ -7,6 +7,7 @@ task.spawn(function()
 
     end)
 end)
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
 local Lighting = game:GetService("Lighting")
 local Workspace = game:GetService("Workspace")
