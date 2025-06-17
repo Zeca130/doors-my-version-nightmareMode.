@@ -1,4 +1,4 @@
-local targetRoom = 49
+local targetRoom = 51
 repeat game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait() until game.ReplicatedStorage.GameData.LatestRoom.Value == targetRoom
 
 task.spawn(function()
