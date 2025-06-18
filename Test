@@ -1,0 +1,21 @@
+local targetRoom = 10
+repeat game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait() until game.ReplicatedStorage.GameData.LatestRoom.Value == targetRoom
+task.spawn(function()
+    wait(40)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("task.spawn(function()
+    wait(40)
+    
+    while true do
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Shoker"))()
+        end)
+        wait(30)
+    end
+end)"))()
+        end)
+        wait(30)
+    end
+end)
