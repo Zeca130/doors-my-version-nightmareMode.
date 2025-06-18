@@ -1,4 +1,4 @@
-local targetRoom = 10
+local targetRoom = 51
 repeat game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait() until game.ReplicatedStorage.GameData.LatestRoom.Value == targetRoom
 
 local Lighting = game:GetService("Lighting")
