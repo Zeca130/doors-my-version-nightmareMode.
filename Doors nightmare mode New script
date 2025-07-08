@@ -2,6 +2,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-vers
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Candle%20floor%202"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/refs/heads/main/README.md"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/TextP.txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Script%20Y"))()
 task.spawn(function()
     pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Open%20doors%20custom"))()
@@ -156,16 +157,6 @@ task.spawn(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Depth"))()
         end)
         wait(180)
-    end
-end)
-task.spawn(function()
-    wait(500)
-    
-    while true do
-        pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Silent.lua"))()
-        end)
-        wait(560)
     end
 end)
 task.spawn(function()
