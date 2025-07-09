@@ -142,16 +142,6 @@ wait(600)
     end
 end)
 task.spawn(function()
-wait(750)
-    
-    while true do
-        pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Grundge"))()
-        end)
-        wait(890)
-    end
-end)
-task.spawn(function()
     wait(100)
     
     while true do
