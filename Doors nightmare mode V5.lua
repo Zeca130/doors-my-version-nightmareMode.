@@ -74,7 +74,7 @@ task.spawn(function()
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/New%20A-60'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/New%20A-60.lua'))()
         end)
         wait(990)
     end
