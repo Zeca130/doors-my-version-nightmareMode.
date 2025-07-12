@@ -36,9 +36,9 @@ end
 
 Lighting.Ambient = Color3.new(0, 0, 0)
 Lighting.OutdoorAmbient = Color3.new(0, 0, 0)
-Lighting.Brightness = 0
-Lighting.FogStart = 7
-Lighting.FogEnd = 16
+Lighting.Brightness = 3
+Lighting.FogStart = 20
+Lighting.FogEnd = 35
 Lighting.FogColor = Color3.new(0, 0, 0)
 Lighting.GlobalShadows = true
 Lighting.ExposureCompensation = -1
