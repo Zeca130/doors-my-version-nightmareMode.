@@ -40,13 +40,13 @@ task.spawn(function()
     end)
 end)
 task.spawn(function()
-wait(600)
+wait(700)
     
     while true do
         pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Nightmare%20entity"))()
         end)
-        wait(700)
+        wait(760)
     end
 end)
 task.spawn(function()
@@ -154,7 +154,7 @@ wait(600)
     
     while true do
         pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Monoxide/refs/heads/main/Monoxide"))()
+            loadstring(game:HttpGet("https://github.com/Zeca130/doors-my-version-nightmareMode./blob/main/Boppies"))()
         end)
         wait(750)
     end
