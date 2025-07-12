@@ -1,3 +1,5 @@
+local targetRoom = 48
+repeat game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait() until game.ReplicatedStorage.GameData.LatestRoom.Value == targetRoom
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 local shut = game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.IntroText
 local intro = shut:Clone()
