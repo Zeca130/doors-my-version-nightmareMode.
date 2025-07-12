@@ -4,12 +4,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Doors-mode/re
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/TextL.lua"))()
 task.spawn(function()
     pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/LIBRARY.lua"))()
-
-    end)
-end)
-task.spawn(function()
-    pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/doors-my-version-nightmareMode./refs/heads/main/Script%20G"))()
 
     end)
