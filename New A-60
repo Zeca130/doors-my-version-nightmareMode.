@@ -9,7 +9,7 @@ local entity = Spawner.createEntity({
     Speed = 200, -- Percentage, 100 = default Rush speed
     DelayTime = 5, -- Time before starting cycles (seconds)
     HeightOffset = 5,
-    CanKill = false,
+    CanKill = true,
     NoDieOnCrouching = false,
     NoHiding = false,
     AntiCrucifix = false,
