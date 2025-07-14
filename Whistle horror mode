@@ -12,7 +12,7 @@ local entity = spawner.Create({
             Duration = 1
         },
         Shatter = true,
-        Repair = false
+        Repair = true
     },
     Earthquake = {
         Enabled = false
@@ -23,7 +23,7 @@ local entity = spawner.Create({
         Values = {1.5, 20, 0.1, 1}
     },
     Movement = {
-        Speed = 56,
+        Speed = 60,
         Delay = 0,
         Reversed = false
     },
@@ -92,27 +92,6 @@ entity:SetCallback("OnLookAt", function(lineOfSight)
     local Background = Instance.new("Frame")
     local Overlay = Instance.new("ImageLabel")
     local Face = Instance.new("ImageLabel")
-
-    JumpscareGui.Name = "JumpscareGui"
-    JumpscareGui.IgnoreGuiInset = true
-    JumpscareGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    JumpscareGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-    Background.Name = "Background"
-    Background.BackgroundColor3 = Color3.fromRGB(3, 25, 99)
-    Background.BorderSizePixel = 1
-    Background.Size = UDim2.new(1, 0, 1, 0)
-    Background.ZIndex = 999
-    Background.Parent = JumpscareGui
-
-    Overlay.Name = "Overlay"
-    Overlay.BackgroundTransparency = 1
-    Overlay.Size = UDim2.new(1, 0, 1, 0)
-    Overlay.Position = UDim2.new(0, 0, 0, 0)
-    Overlay.Image = "rbxassetid://236542974"
-    Overlay.ImageTransparency = 0.7
-    Overlay.ZIndex = 998
-    Overlay.Parent = Background
 
     Face.Name = "Face"
     Face.AnchorPoint = Vector2.new(0.5, 0.5)
