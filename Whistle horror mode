@@ -1,0 +1,98 @@
+local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Horror-mode/refs/heads/main/Spawner.lua"))()
+
+-- Настройки сущности
+local entity = spawner.Create({
+    Entity = {
+        Name = "Whistle",
+        Asset = "rbxassetid://87984943504200",
+        HeightOffset = 0
+    },
+    Lights = {
+        Flicker = {
+            Enabled = false,
+            Duration = 1
+        },
+        Shatter = true,
+        Repair = false
+    },
+    CameraShake = {
+        Enabled = true,
+        Range = 100,
+        Values = {1.5, 20, 0.1, 1}
+    },
+    Movement = {
+        Speed = 25,
+        Delay = 0,
+        Reversed = false
+    },
+    Damage = {
+        Enabled = true,
+        Range = 40,
+        Amount = 125
+    },
+    Crucifixion = {
+        Enabled = true,
+        Range = 40,
+        Resist = false,
+        Break = true
+    }
+})
+
+-- Функция для скримера
+local function ShowJumpscare()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Zeca130/Horror-mode/refs/heads/main/Jumpscare"))()
+end
+
+-- Обработчик смерти игрока
+local function OnCharacterDeath(character)
+    if character:IsA("Model") and character:FindFirstChild("Humanoid") then
+        character.Humanoid.Died:Connect(function()
+            ShowJumpscare()
+        end)
+    end
+end
+
+-- Инициализация
+entity:SetCallback("OnSpawned", function()
+    require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("DO YOU HEAR THE WHISTLE", true)
+    
+    local sound = Instance.new("Sound")
+    sound.SoundId = "rbxassetid://116519796488654"
+    sound.Volume = 1
+    sound.Parent = workspace
+    sound:Play()
+    
+    -- Подписываемся на смерть игрока
+    local player = game.Players.LocalPlayer
+    if player.Character then
+        OnCharacterDeath(player.Character)
+    end
+    
+    player.CharacterAdded:Connect(OnCharacterDeath)
+end)
+
+entity:SetCallback("OnStartMoving", function()
+    game.Players.LocalPlayer.Character.Humanoid:TakeDamage(10)
+end)
+
+-- Запускаем сущность
+entity:Run()
+
+-- Система преследования
+spawn(function()
+    while wait(1) do
+        if entity.Model and entity.Model.PrimaryPart then
+            local player = game.Players.LocalPlayer
+            if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                local distance = (entity.Model.PrimaryPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+                
+                -- Если игрок близко, увеличиваем скорость
+                if distance < 50 then
+                    entity:UpdateMovement({Speed = 50})
+                else
+                    entity:UpdateMovement({Speed = 25})
+                end
+            end
+        end
+    end
+end)
